@@ -363,7 +363,6 @@ describe('dom', function() {
 
 		it('should listen to keyboard events by keyCode alias', function() {
 			var element = document.createElement('input');
-			element.setAttribute('type', 'text');
 			dom.enterDocument(element);
 
 			var listener = sinon.stub();
@@ -386,7 +385,6 @@ describe('dom', function() {
 
 		it('should not trigger the listener if keyCode does not match given key alias', function() {
 			var element = document.createElement('input');
-			element.setAttribute('type', 'text');
 			dom.enterDocument(element);
 
 			var listener = sinon.stub();
@@ -397,7 +395,6 @@ describe('dom', function() {
 
 		it('should not trigger the listener to inexistent key alias', function() {
 			var element = document.createElement('input');
-			element.setAttribute('type', 'text');
 			dom.enterDocument(element);
 
 			var listener = sinon.stub();
@@ -408,7 +405,6 @@ describe('dom', function() {
 
 		it('should not trigger the listener to an inexistent key alias', function() {
 			var element = document.createElement('input');
-			element.setAttribute('type', 'text');
 			dom.enterDocument(element);
 
 			var listener = sinon.stub();
@@ -419,7 +415,6 @@ describe('dom', function() {
 
 		it('should not stop listening to an unparameterized keyboard event', function() {
 			var element = document.createElement('input');
-			element.setAttribute('type', 'text');
 			dom.enterDocument(element);
 
 			var listener = sinon.stub();
