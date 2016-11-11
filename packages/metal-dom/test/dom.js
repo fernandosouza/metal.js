@@ -4,6 +4,7 @@ import dom from '../src/all/dom';
 import { object } from 'metal';
 import UA from 'metal-useragent';
 import DomEventHandle from '../src/DomEventHandle';
+import { KEYMAP } from '../src/keyboardEvents';
 
 describe('dom', function() {
 
@@ -358,6 +359,73 @@ describe('dom', function() {
 
 			dom.triggerEvent(element, 'click');
 			assert.strictEqual(0, listener.callCount);
+		});
+
+		it('should listen to keyboard events by keyCode alias', function() {
+			var element = document.createElement('input');
+			element.setAttribute('type', 'text');
+			dom.enterDocument(element);
+
+			var listener = sinon.stub();
+			var handle = dom.on(element, 'keydown:enter', listener);
+			dom.triggerEvent(element, 'keydown', {keyCode: KEYMAP['ENTER']});
+			assert.strictEqual(1, listener.callCount);
+		});
+
+		it('should listen to keyboard events by multiple key alias', function() {
+			var element = document.createElement('input');
+			element.setAttribute('type', 'text');
+			dom.enterDocument(element);
+
+			var listener = sinon.stub();
+			var handle = dom.on(element, 'keydown:enter,space', listener);
+			dom.triggerEvent(element, 'keydown', {keyCode: KEYMAP['ENTER']});
+			dom.triggerEvent(element, 'keydown', {keyCode: KEYMAP['SPACE']});
+			assert.strictEqual(2, listener.callCount);
+		});
+
+		it('should not trigger the listener if keyCode does not match given key alias', function() {
+			var element = document.createElement('input');
+			element.setAttribute('type', 'text');
+			dom.enterDocument(element);
+
+			var listener = sinon.stub();
+			var handle = dom.on(element, 'keyup:enter', listener);
+			dom.triggerEvent(element, 'keyup', {keyCode: KEYMAP['SPACE']});
+			assert.strictEqual(0, listener.callCount);
+		});
+
+		it('should not trigger the listener to inexistent key alias', function() {
+			var element = document.createElement('input');
+			element.setAttribute('type', 'text');
+			dom.enterDocument(element);
+
+			var listener = sinon.stub();
+			var handle = dom.on(element, 'keyup:play', listener);
+			dom.triggerEvent(element, 'keyup', {keyCode: KEYMAP['SPACE']});
+			assert.strictEqual(0, listener.callCount);
+		});
+
+		it('should not trigger the listener to an inexistent key alias', function() {
+			var element = document.createElement('input');
+			element.setAttribute('type', 'text');
+			dom.enterDocument(element);
+
+			var listener = sinon.stub();
+			var handle = dom.on(element, 'keyup:enter,', listener);
+			dom.triggerEvent(element, 'keyup', {keyCode: KEYMAP['SPACE']});
+			assert.strictEqual(0, listener.callCount);
+		});
+
+		it('should not stop listening to an unparameterized keyboard event', function() {
+			var element = document.createElement('input');
+			element.setAttribute('type', 'text');
+			dom.enterDocument(element);
+
+			var listener = sinon.stub();
+			var handle = dom.on(element, 'keyup', listener);
+			dom.triggerEvent(element, 'keyup', {keyCode: KEYMAP['ENTER']});
+			assert.strictEqual(1, listener.callCount);
 		});
 	});
 

@@ -4,6 +4,7 @@ import { isDef, isDocument, isElement, isObject, isString, object } from 'metal'
 import domData from './domData';
 import DomDelegatedEventHandle from './DomDelegatedEventHandle';
 import DomEventHandle from './DomEventHandle';
+import { getKeyboardEventConfig } from './keyboardEvents';
 
 const elementsByTag_ = {};
 const supportCache_ = {};
@@ -447,6 +448,11 @@ function normalizeDelegateEvent_(event) {
 export function on(element, eventName, callback, opt_capture) {
 	if (isString(element)) {
 		return delegate(document, eventName, element, callback);
+	}
+	var keyConfig = getKeyboardEventConfig(eventName);
+	if (keyConfig) {
+		eventName = keyConfig.originalEvent;
+		callback = keyConfig.handler.bind(keyConfig, callback);
 	}
 	var customConfig = customEvents[eventName];
 	if (customConfig && customConfig.event) {
