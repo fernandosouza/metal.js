@@ -406,16 +406,6 @@ describe('dom', function() {
 			assert.strictEqual(5, listener.callCount);
 		});
 
-		it('should not trigger the listener if keyCode does not match given key alias', function() {
-			var element = document.createElement('input');
-			dom.enterDocument(element);
-
-			var listener = sinon.stub();
-			var handle = dom.on(element, 'keyup:enter', listener);
-			dom.triggerEvent(element, 'keyup', {keyCode: KEYMAP['SPACE']});
-			assert.strictEqual(0, listener.callCount);
-		});
-
 		it('should not trigger the listener to inexistent key alias', function() {
 			var element = document.createElement('input');
 			dom.enterDocument(element);
