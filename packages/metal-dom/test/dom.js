@@ -361,7 +361,7 @@ describe('dom', function() {
 			assert.strictEqual(0, listener.callCount);
 		});
 
-		it('should listen to keyboard events by keyCode alias', function() {
+		it('should listen to the keydown keyboard event by keyCode alias', function() {
 			var element = document.createElement('input');
 			dom.enterDocument(element);
 
@@ -371,16 +371,39 @@ describe('dom', function() {
 			assert.strictEqual(1, listener.callCount);
 		});
 
+		it('should listen to the keypress keyboard event by keyCode alias', function() {
+			var element = document.createElement('input');
+			dom.enterDocument(element);
+
+			var listener = sinon.stub();
+			var handle = dom.on(element, 'keypress:enter', listener);
+			dom.triggerEvent(element, 'keypress', {keyCode: KEYMAP.ENTER});
+			assert.strictEqual(1, listener.callCount);
+		});
+
+		it('should listen to the keyup keyboard event by keyCode alias', function() {
+			var element = document.createElement('input');
+			dom.enterDocument(element);
+
+			var listener = sinon.stub();
+			var handle = dom.on(element, 'keyup:enter', listener);
+			dom.triggerEvent(element, 'keyup', {keyCode: KEYMAP.ENTER});
+			assert.strictEqual(1, listener.callCount);
+		});
+
 		it('should listen to keyboard events by multiple key alias', function() {
 			var element = document.createElement('input');
 			element.setAttribute('type', 'text');
 			dom.enterDocument(element);
 
 			var listener = sinon.stub();
-			var handle = dom.on(element, 'keydown:enter,space', listener);
+			var handle = dom.on(element, 'keydown:enter,space,esc,up,down', listener);
 			dom.triggerEvent(element, 'keydown', {keyCode: KEYMAP['ENTER']});
 			dom.triggerEvent(element, 'keydown', {keyCode: KEYMAP['SPACE']});
-			assert.strictEqual(2, listener.callCount);
+			dom.triggerEvent(element, 'keydown', {keyCode: KEYMAP['ESC']});
+			dom.triggerEvent(element, 'keydown', {keyCode: KEYMAP['UP']});
+			dom.triggerEvent(element, 'keydown', {keyCode: KEYMAP['DOWN']});
+			assert.strictEqual(5, listener.callCount);
 		});
 
 		it('should not trigger the listener if keyCode does not match given key alias', function() {
