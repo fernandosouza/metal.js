@@ -4,7 +4,7 @@ import dom from '../src/all/dom';
 import { object } from 'metal';
 import UA from 'metal-useragent';
 import DomEventHandle from '../src/DomEventHandle';
-import { KEYMAP } from '../src/keyboardEvents';
+import * as KEYMAP from '../src/keyConstants';
 
 describe('dom', function() {
 
