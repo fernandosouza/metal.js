@@ -19,7 +19,7 @@
     "eslint-plugin-react": "^6.8.0",
     "gulp": "^3.8.11",
     "gulp-babel": "^6.1.2",
-    "gulp-metal": "git+ssh://git@github.com/fernandosouza/gulp-metal.git",
+    "gulp-metal": "git+http://git@github.com/fernandosouza/gulp-metal.git",
     "gulp-replace": "^0.5.4",
     "karma": "^1.1.0",
     "karma-browserify": "^5.0.5",
