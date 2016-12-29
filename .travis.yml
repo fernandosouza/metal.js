@@ -3,7 +3,7 @@ jdk:
 - oraclejdk8
 addons:
   sauce_connect:
-    username: "fernandosouza"
+    username: fernandosouza
   jwt:
     secure: eTj3ybcxwAYaanKSm3vPFyMlBGKiLJGKjOctA+1vwAKB+jgR1WniCRk2Rt2uvlyppPG5cpnXfkTVdv/Oa+2NKQHIrxiobKzio4sUfvlXxqwkXdotI7H9WuD+/Qkax+QG064Q8aDKGMWarYoNb29baVHVVK1WpsO7DaZKjw8ffOfHrDCLxVI2bnkEA3hpU6t63Pful2YS7Kpc4gmI4Ic4u/E/OXUoVfe4HYlp/C02vK6x5XVUd1xI840Xg+xJXiH4bRttW5e64h5HaMa/VhhDfBh8/kr1kxgfXy5vAEWijSvsR7fBW8bJI01+VVLSlIUyXunCUEoza38MLHTLeyQsByuZMr9rQflkfTHnlc1fjBZsR65kHbdEvktP1U/9PwOeYAS8/LN5id0POez4jv8VMr70kLRPDYy798cfXh9AY2ViZRfPSJpYvaJ1EPBjpuG806B+QPg0Fg7+Z/EV/IB4vPRNdoU0ungyFApALgswnWR/O+yB+ez4eitjArvBj/OBYRVKRZAWfQA5tsWrnXEnyT/b5V0gvmrt+J9fRvHLcWKJkTJ1mwzw3UzhXEbNvyey4nI51DApzt6ueiQbMa5H7NmYt8uVdNYSlEoilYVnWHh/WJumSZ0Sr2lr1un3/kNObdEmJlPPgVDsp22xpjKNNH4lXP1JNPbod6Azy11keGY=
 before_install:
