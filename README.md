@@ -1,4 +1,4 @@
-# Metal.js Awesome!
+# Metal.js
 
 [![Build Status](https://travis-ci.org/fernandosouza/metal.js.svg?branch=master)](https://travis-ci.org/fernandosouza/metal.js)
 [![Slack Channel](http://metaljs-chat.wedeploy.io/badge.svg)](http://metaljs-chat.wedeploy.io/)
