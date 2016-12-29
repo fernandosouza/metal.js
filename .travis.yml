@@ -2,10 +2,7 @@ language: java
 jdk:
 - oraclejdk8
 addons:
-  sauce_connect:
-    username: fernandosouza
-  jwt:
-    secure: XSWdafqCbfYknLxr8MsGpMrQsAqK/D2eSNSMaXZKDcuGkfZb7uFmAXpYNYDSYUT6sJAGJ3RIGs4SfqeznUlDMBy8BflyCLcUhpqZKdXLWg1hT9ee1hxGKBJrDnmBMhqxJTzucqK4q9V2RYy856hYLNctO2qVCEQtex4W/Fbl3lXA+qROnWFM8OI1wIvvyFVH1JD/CuygeqW7sjVRDKkKcx0PcXGWBFj9KADMO/RPexRpQae9BLRxcf87mC0u0YesPOY1svw2m5IZHmE+X9EP/NmMsVZ2OtnXZ2WR/xBhwlINF1HesjTWaYp2K7r3BXrIQ8f4hork+lme1JAaW6KmthyP2sCnF45NKvnTihXbwMXBnbAUTSHX1CwfXk4vfTnZkuA+syGd1b1uGSJ6yJhZ5jnNI52RzViWTVNsIOCXlOoszyjxHMPAYebvWiBVZ9fPqveW4jhrY6QSikc2ZpX0YvZJbGfbSPtIc8CxC+iliLtPZzGYdE1iaLR8pyrWqQkL4HVmtf+/caHa1lRNlnGxgybMBnGaTar1I/I5L8pDHHW0KLepmVnFWDy2wywJwar1KgWLqqZu4pCk8BLeJc4MxQWMzFmZqI05/WB0lBCdx4TvbmmNZRvPycWaTa2MOIfT2Tydj81j0Qr3tzz1zGzwe/PWp2DyDA8uth78Dxt20TA=
+  sauce_connect: true
 before_install:
 - nvm install 5
 - npm install -g lerna@2.0.0-beta.30
