@@ -1,6 +1,3 @@
-Changes
-
-
 # Metal.js
 
 [![Build Status](https://img.shields.io/travis/metal/metal.js/master.svg?style=flat)](https://travis-ci.org/fernandosouza/metal.js)
