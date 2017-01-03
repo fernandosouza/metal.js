@@ -2,8 +2,7 @@ language: java
 jdk:
 - oraclejdk8
 addons:
-  sauce_connect:
-    username: alloyui
+  sauce_connect: true
   jwt:
     secure: U6qJCpATEKvER0GTRTmTy7+Ib3WGoC47+91xJLO6R3Mx+N/+tWayJEkRw6T/i/qkY+eA+tAqLtM7z21CzbUTFMRpRKyI+oHwmu7cSoiZIIFthoYfHrIhuxIIHvy8GhhDbJLxtVCgMGrIGPNdLVBd0z4iViv3TOsKkGeUgD6mPZJmbiiSzYADOq5S0uDGgNUtJWpmF+aVeZdCiUovDh4q6MVfnrMNi1j5lpm/WQ3+PT2yNhf4orxj54pmx27nEFX90D2xsw+8yL98R353q6r0xoYH76ClVGiOm1m6AY8F2NBw8dez63Gd9drMDbg6fLmcOrChe2hqAAMrlmhSIgz+rlj2GpOTG+hExyXinPOpcBdHB2sJchrayDo/LEPdE7zM4z0T50QhQ7AatzAc9OHPjDdXujtwdkfBMMPiqbCU/eWfH0O9mubcJGHn52JS5Kh9Pp+XLVe+H3GmVyYOFGzqA29HV+5lCFsz253vJuRHx6BGW8xL5GMRkDdNxtuR/i0LDD67llNBC8R0zE9y3H0Vov3DIwQIIqEVjO+9UON68s6jqSd8lrd0WecCMrKAldTbPhKs9HFQaXcAKzrO/Q6lLb16oZIeIXppivIGiMsb3aZ/QZrVkE9rxrGkUVR2+F5FYUxcSJZK282EmhsWjAiLLcY3ogr4Vi//CFqk/dPflEc=
 before_install:
