@@ -20,7 +20,7 @@ describe('dom', function() {
 			}
 
 			var element = globals.document.createElement('div');
-			dom.addClasses(element, 'class1 class2');
+			dom.addClasses(element, 'class1 classe');
 			assertClassesAdded();
 		});
 
